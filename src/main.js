@@ -52,10 +52,16 @@ headerElement.append(logoElement)
 // })
 
 import { getDataObject } from './component/readcep'
-
-const itens = await getDataObject(5)
+const tree = new RedBlackTree();
+const itens = await getDataObject(5,tree)
 console.log(itens)
-
+const find = tree.search(Number("01001010"));
+if (find){ 
+    var node = tree.getNode(Number("01001010"))
+    nod.key.print()
+}else{
+    console.log("Nao encontrou")
+}
 // const tree = new RedBlackTree();
 // var node0 = tree.insert(1);
 // var node1 = tree.insert(8);
@@ -77,15 +83,15 @@ console.log(itens)
 
 import { Address } from './core/Address'
 
-var address_example = new Address({
-    city: "Floriano/PI",
-    street: "BR 343, s/n",
-    neighborhood: "Campo Velho",
-    zipCode: "64002150"
-})
+//var address_example = new Address({
+//     city: "Floriano/PI",
+//     street: "BR 343, s/n",
+//     neighborhood: "Campo Velho",
+//     zipCode: "64002150"
+// })
 
-address_example.print()
+// address_example.print()
 
-const tree = new RedBlackTree();
-var node0 = tree.insert(address_example);
+// const tree = new RedBlackTree();
+// var node0 = tree.insert(address_example);
 console.log(tree.count)
